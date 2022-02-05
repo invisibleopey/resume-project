@@ -17,6 +17,14 @@ class App extends Component {
       description: 'Yeah',
     };
   }
+
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
   render() {
     const { firstName, lastName, title, address, email, phoneNumber, description } = this.state;
     return (
@@ -31,6 +39,7 @@ class App extends Component {
             email={email}
             phoneNumber={phoneNumber}
             description={description}
+            handleChange={this.handleChange}
           />
         </div>
         <Footer />

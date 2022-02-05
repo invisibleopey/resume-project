@@ -1,7 +1,8 @@
 import React from 'react';
 
 function General(props) {
-  const { firstName, lastName, title, address, email, phoneNumber, description } = props;
+  const { firstName, lastName, title, address, email, phoneNumber, description, handleChange } =
+    props;
   return (
     <div className="general">
       <form action="#" data-testid="general-form">
@@ -11,42 +12,42 @@ function General(props) {
             type="text"
             name="firstName"
             value={firstName}
-            // onChange={}
+            onChange={handleChange}
             placeholder="First Name"
           />
           <input
             type="text"
             name="lastName"
             value={lastName}
-            // onChange={handleChange}
+            onChange={handleChange}
             placeholder="Last Name"
           />
           <input
             type="text"
             name="title"
             value={title}
-            // onChange={handleChange}
+            onChange={handleChange}
             placeholder="Title"
           />
           <input
             type="text"
             name="address"
             value={address}
-            // onChange={handleChange}
+            onChange={handleChange}
             placeholder="Address"
           />
           <input
             type="email"
             name="email"
             value={email}
-            // onChange={handleChange}
+            onChange={handleChange}
             placeholder="Email"
           />
           <input
             type="text"
             name="phoneNumber"
             value={phoneNumber}
-            // onChange={handleChange}
+            onChange={handleChange}
             placeholder="Phone Number"
           />
           <textarea
@@ -55,7 +56,7 @@ function General(props) {
             rows="10"
             placeholder="Description"
             value={description}
-            // onChange={handleChange}
+            onChange={handleChange}
           ></textarea>
         </fieldset>
       </form>

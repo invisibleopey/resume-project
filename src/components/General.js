@@ -1,6 +1,7 @@
 import React from 'react';
 
 function General(props) {
+  const { firstName, lastName, title, address, email, phoneNumber, description } = props;
   return (
     <div className="general">
       <form action="#" data-testid="general-form">
@@ -9,42 +10,42 @@ function General(props) {
           <input
             type="text"
             name="firstName"
-            value="Adullahi"
+            value={firstName}
             // onChange={}
             placeholder="First Name"
           />
           <input
             type="text"
             name="lastName"
-            value="Muritala"
+            value={lastName}
             // onChange={handleChange}
             placeholder="Last Name"
           />
           <input
             type="text"
             name="title"
-            value="Manager"
+            value={title}
             // onChange={handleChange}
             placeholder="Title"
           />
           <input
             type="text"
             name="address"
-            value="London"
+            value={address}
             // onChange={handleChange}
             placeholder="Address"
           />
           <input
             type="email"
             name="email"
-            value="oabdullahi37@gmail.com"
+            value={email}
             // onChange={handleChange}
             placeholder="Email"
           />
           <input
             type="text"
             name="phoneNumber"
-            value="08034091908"
+            value={phoneNumber}
             // onChange={handleChange}
             placeholder="Phone Number"
           />
@@ -53,7 +54,7 @@ function General(props) {
             cols="10"
             rows="10"
             placeholder="Description"
-            value="Yeah yeah yeah"
+            value={description}
             // onChange={handleChange}
           ></textarea>
         </fieldset>

@@ -8,3 +8,11 @@ it('renders Form', () => {
 
   expect(form).toBeInTheDocument();
 });
+
+it('receives and display the right props', () => {
+  const props = { firstName: 'Opeyemi' };
+  render(<General firstName={props.firstName} />);
+
+  const firstNameField = screen.getByPlaceholderText(/First Name/i);
+  expect(firstNameField).toHaveAttribute('value', 'Opeyemi');
+});

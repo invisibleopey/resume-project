@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uniqid from 'uniqid';
 import './styles/App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -15,6 +16,16 @@ class App extends Component {
       email: 'oabduld@gmail.com',
       phoneNumber: '090',
       description: 'Yeah',
+      school: {
+        name: '',
+        city: '',
+        degree: '',
+        subject: '',
+        startDate: '',
+        endDate: '',
+        id: uniqid(),
+      },
+      schools: [],
     };
   }
 

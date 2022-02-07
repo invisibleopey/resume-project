@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import General from '../components/General';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
@@ -11,8 +11,9 @@ it('renders Form', () => {
 });
 
 it('receives and display the right props', () => {
-  const props = { firstName: 'Opeyemi' };
-  render(<General firstName={props.firstName} />);
+  const handleChange = jest.fn;
+  const props = { firstName: 'Opeyemi', handleChange: handleChange };
+  render(<General firstName={props.firstName} handleChange={props.handleChange} />);
 
   const firstNameField = screen.getByPlaceholderText(/First Name/i);
   expect(firstNameField).toHaveAttribute('value', 'Opeyemi');

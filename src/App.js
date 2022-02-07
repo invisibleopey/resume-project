@@ -4,18 +4,19 @@ import './styles/App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import General from './components/General';
+import Education from './components/Education';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: 'Abdul',
-      lastName: 'Muri',
-      title: 'Loader',
-      address: 'London',
-      email: 'oabduld@gmail.com',
-      phoneNumber: '090',
-      description: 'Yeah',
+      firstName: '',
+      lastName: '',
+      title: '',
+      address: '',
+      email: '',
+      phoneNumber: '',
+      description: '',
       school: {
         name: '',
         city: '',
@@ -36,8 +37,30 @@ class App extends Component {
     });
   };
 
+  handleSchoolChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ school: { [name]: value } });
+  };
+
+  handleSchoolSubmit = (event) => {
+    event.preventDefault();
+    this.setState({
+      schools: this.state.schools.concat(this.state.school),
+      school: {
+        name: '',
+        city: '',
+        degree: '',
+        subject: '',
+        startDate: '',
+        endDate: '',
+        id: uniqid(),
+      },
+    });
+  };
+
   render() {
-    const { firstName, lastName, title, address, email, phoneNumber, description } = this.state;
+    const { firstName, lastName, title, address, email, phoneNumber, description, school } =
+      this.state;
     return (
       <div className="App">
         <Header />
@@ -51,6 +74,11 @@ class App extends Component {
             phoneNumber={phoneNumber}
             description={description}
             handleChange={this.handleChange}
+          />
+          <Education
+            school={school}
+            handleChange={this.handleSchoolChange}
+            handleSchoolSubmit={this.handleSchoolSubmit}
           />
         </div>
         <Footer />

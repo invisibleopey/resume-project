@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 it('renders Form', () => {
+  // Mock the props to prevent reading properties of undefined in constructing the DOM
   const props = { school: {} };
   render(<Education school={props.school} />);
   const form = screen.getByTestId('education-form');

@@ -18,7 +18,7 @@ function Overview(props) {
     handleJobEdit,
   } = props;
   return (
-    <div>
+    <div data-testid="overview-container">
       <div className="overview-hero">
         <h2>{`${firstName} ${lastName}`}</h2>
         <h3>{title}</h3>

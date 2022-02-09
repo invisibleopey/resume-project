@@ -1,23 +1,21 @@
 .App {
   height: 100%;
-  width: 70%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-.header {
-  margin: 0;
-  background-color: bisque;
-}
 .header,
 .footer {
-  text-align: center;
+  margin: 0;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  background-color: rgba(24, 24, 9, 0.9);
+  color: rgb(283, 283, 283);
 }
 .content {
   flex: 1 0 auto;
-}
-.footer {
-  margin: 0;
-  background-color: burlywood;
+  width: 70%;
+  margin: 0 auto;
 }

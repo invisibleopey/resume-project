@@ -197,7 +197,7 @@ class App extends Component {
             handleChange={this.handleJobChange}
             handleJobSubmit={this.handleJobSubmit}
           />
-          <div className="overview-container">
+          <div>
             <Overview
               firstName={firstName}
               lastName={lastName}

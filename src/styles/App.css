@@ -41,12 +41,43 @@ textarea {
   background-color: rgba(24, 24, 9, 0.9);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .content legend {
   font-size: 1.5em;
   color: rgba(24, 24, 9, 0.9);
 }
+
+.overview-main {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  padding: 0.5em;
+  background-color: rgb(283, 283, 283);
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+.overview-main h3 {
+  color: rgb(20, 62, 114);
+  border-bottom: 1px solid rgb(203, 203, 203);
+}
+
+.overview-hero {
+  padding: 1rem;
+  background-color: rgb(20, 62, 114);
+  color: rgb(283, 283, 283);
+}
+
+.left {
+  flex-grow: 3;
+}
+.right {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
 @media screen and (max-width: 756px) {
   .content {
     width: 80%;

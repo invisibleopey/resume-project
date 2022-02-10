@@ -1,3 +1,10 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
 html,
 body,
 #root {
@@ -9,6 +16,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(204, 204, 204);
 }
 
 code {

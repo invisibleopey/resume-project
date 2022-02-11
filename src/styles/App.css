@@ -49,6 +49,10 @@ textarea {
   color: rgba(24, 24, 9, 0.9);
 }
 
+.overview-container {
+  margin-top: 3em;
+}
+
 .overview-main {
   max-width: 100%;
   display: flex;

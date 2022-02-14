@@ -4,7 +4,11 @@ Part of The Odin Project's [Curriculum](https://www.theodinproject.com/lessons/c
 
 ## Live Demo
 
-[Live Demp]()
+[Live Demo](https://invisibleopey.github.io/resume-project/)
+
+# Screenshot
+
+![Screenshot of live demo](/screenshot.png)
 
 # Getting Started
 
@@ -16,8 +20,8 @@ npm run start
 # Built with
 
 [React](https://reactjs.org/)
-[HTML]()
-[CSS]()
+[HTML](https://html.com)
+[CSS](htpps://)
 
 # License
 

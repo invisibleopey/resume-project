@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import uniqid from 'uniqid';
 import './styles/App.css';
 import Header from './components/Header';
@@ -7,6 +7,26 @@ import General from './components/General';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Overview from './components/Overview';
+
+const App = () => {
+  const firstName = useGeneralInput('');
+  const lastName = useGeneralInput('');
+  const title = useGeneralInput('');
+  const address = useGeneralInput('');
+  const email = useGeneralInput('');
+  const phoneNumber = useGeneralInput('');
+  const description = useGeneralInput('');
+};
+
+function useGeneralInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  function handleGeneralChange(event) {
+    setValue(e.target.value);
+  }
+
+  return value, handleGeneralChange;
+}
 
 class App extends Component {
   constructor(props) {

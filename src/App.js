@@ -16,6 +16,25 @@ const App = () => {
   const email = useGeneralInput('');
   const phoneNumber = useGeneralInput('');
   const description = useGeneralInput('');
+  const [school, setSchool] = useState({
+    name: '',
+    city: '',
+    degree: '',
+    subject: '',
+    startDate: '',
+    endDate: '',
+    id: uniqid(),
+  });
+  const [schools, setSchools] = useState([]);
+  const [job, setJob] = useState({
+    position: '',
+    company: '',
+    city: '',
+    startDate: '',
+    endDate: '',
+    id: uniqid(),
+  });
+  const [jobs, setJobs] = useState([]);
 };
 
 function useGeneralInput(initialValue) {

@@ -39,7 +39,7 @@ const App = () => {
   const handleSchoolChange = (event) => {
     const { name, value } = event.target;
     setSchool((prevState) => ({
-      ...prevState.school,
+      ...prevState,
       [name]: value,
     }));
   };
@@ -47,9 +47,36 @@ const App = () => {
   const handleJobChange = (event) => {
     const { name, value } = event.target;
     setJob((prevState) => ({
-      ...prevState.job,
+      ...prevState,
       [name]: value,
     }));
+  };
+
+  const handleSchoolSubmit = (event) => {
+    event.preventDefault();
+    setSchools(schools.concat(school));
+    setSchool({
+      name: '',
+      city: '',
+      degree: '',
+      subject: '',
+      startDate: '',
+      endDate: '',
+      id: uniqid(),
+    });
+  };
+
+  const handleJobSubmit = (event) => {
+    event.preventDefault();
+    setJobs(jobs.concat(job));
+    setJob({
+      position: '',
+      company: '',
+      city: '',
+      startDate: '',
+      endDate: '',
+      id: uniqid(),
+    });
   };
 
   return (
@@ -68,13 +95,9 @@ const App = () => {
         <Education
           school={school}
           handleChange={handleSchoolChange}
-          // handleSchoolSubmit={this.handleSchoolSubmit}
+          handleSchoolSubmit={handleSchoolSubmit}
         />
-        <Experience
-          job={job}
-          handleChange={handleJobChange}
-          // handleJobSubmit={this.handleJobSubmit}
-        />
+        <Experience job={job} handleChange={handleJobChange} handleJobSubmit={handleJobSubmit} />
         <div>
           <Overview
             firstName={firstName.value}

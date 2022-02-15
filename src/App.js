@@ -79,6 +79,26 @@ const App = () => {
     });
   };
 
+  const handleSchoolEdit = (event) => {
+    const targetId = event.target.parentNode.parentElement.id;
+    const targetSchool = schools.find((school) => school.id === targetId);
+    // The if statement is here to prevent throwing an error in cases where targetSchool is not found,
+    // therefore, to prevent trying to read properties from undefined
+    if (targetSchool)
+      setSchool(() => {
+        return {
+          name: targetSchool.name,
+          city: targetSchool.city,
+          degree: targetSchool.degree,
+          subject: targetSchool.subject,
+          startDate: targetSchool.startDate,
+          endDate: targetSchool.endDate,
+          id: targetSchool.id,
+        };
+      });
+    setSchools((prevState) => prevState.filter((school) => school.id !== targetId));
+  };
+
   return (
     <div className="App">
       <Header />
@@ -110,7 +130,7 @@ const App = () => {
             schools={schools}
             jobs={jobs}
             // handleDelete={this.handleDelete}
-            // handleSchoolEdit={this.handleSchoolEdit}
+            handleSchoolEdit={handleSchoolEdit}
             // handleJobEdit={this.handleJobEdit}
           />
         </div>

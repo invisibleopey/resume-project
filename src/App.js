@@ -118,6 +118,19 @@ const App = () => {
     setJobs((prevState) => prevState.filter((job) => job.id !== targetId));
   };
 
+  const handleDelete = (event) => {
+    const targetId = event.target.parentNode.parentElement.id;
+    // eslint-disable-next-line default-case
+    switch (event.target.parentNode.parentElement.className) {
+      case 'schools':
+        setSchools(schools.filter((item) => item.id !== targetId));
+        break;
+      case 'jobs':
+        setJobs(jobs.filter((item) => item.id !== targetId));
+        break;
+    }
+  };
+
   return (
     <div className="App">
       <Header />
@@ -148,7 +161,7 @@ const App = () => {
             description={description.value}
             schools={schools}
             jobs={jobs}
-            // handleDelete={this.handleDelete}
+            handleDelete={handleDelete}
             handleSchoolEdit={handleSchoolEdit}
             handleJobEdit={handleJobEdit}
           />

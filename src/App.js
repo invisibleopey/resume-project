@@ -99,6 +99,25 @@ const App = () => {
     setSchools((prevState) => prevState.filter((school) => school.id !== targetId));
   };
 
+  const handleJobEdit = (event) => {
+    const targetId = event.target.parentNode.parentElement.id;
+    const targetJob = jobs.find((job) => job.id === targetId);
+    // The if statement is here to prevent throwing an error in cases where targetJob is not found,
+    // therefore, to prevent trying to read properties from undefined
+    if (targetJob)
+      setJob(() => {
+        return {
+          position: targetJob.position,
+          company: targetJob.company,
+          city: targetJob.city,
+          startDate: targetJob.startDate,
+          endDate: targetJob.endDate,
+          id: targetJob.id,
+        };
+      });
+    setJobs((prevState) => prevState.filter((job) => job.id !== targetId));
+  };
+
   return (
     <div className="App">
       <Header />
@@ -131,7 +150,7 @@ const App = () => {
             jobs={jobs}
             // handleDelete={this.handleDelete}
             handleSchoolEdit={handleSchoolEdit}
-            // handleJobEdit={this.handleJobEdit}
+            handleJobEdit={handleJobEdit}
           />
         </div>
       </div>

@@ -12,7 +12,7 @@ Part of The Odin Project's [Curriculum](https://www.theodinproject.com/lessons/c
 
 # Getting Started
 
-git clone https://github.com/igorashs/react-cv-application.git
+git clone https://github.com/invisibleopey/resume-project.git
 cd react-cv-application
 npm install
 npm run start
